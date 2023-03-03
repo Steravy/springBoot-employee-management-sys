@@ -47,6 +47,17 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Employee updateEmployee(Employee employee, Long id) {
+        Employee employeeToUpdate = this.getEmployeeById(id);
+        employeeToUpdate.setFirstName(employee.getFirstName());
+        employeeToUpdate.setLastName(employee.getLastName());
+        employeeToUpdate.setEmail(employee.getEmail());
+        return employeeRepository.save(employeeToUpdate);
+    }
+
+    @Override
+    public Void deleteEmployee(Long id) {
+        Employee employeeToDelete = this.getEmployeeById(id);
+        employeeRepository.delete(employeeToDelete);
         return null;
     }
 
