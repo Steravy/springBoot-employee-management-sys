@@ -1,6 +1,8 @@
 package com.stefanVitoria.employeemanagementsys.model;
 
 import jakarta.persistence.*;
+import lombok.Builder;
+
 
 @Entity
 @Table(name = "employee")
@@ -21,14 +23,14 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(String firstName, String lastName, String email, long id) {
+    public Employee(String firstName, String lastName, String email, Long id) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
